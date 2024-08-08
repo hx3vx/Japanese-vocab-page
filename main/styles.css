@@ -1,0 +1,209 @@
+/* Default (Light Mode) Styles */
+:root {
+    --background-color: #f4f4f4;
+    --card-background-color: #fff;
+    --text-color: #000;
+    --divider-color: #ddd;
+    --button-background-color: #fff;
+    --button-text-color: #000;
+    --button-hover-background-color: #ddd;
+    --button-hover-text-color: #000;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Adjust if needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure section takes up the full width of the container */
+}
+
+.section-heading {
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--button-text-color);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0;
+    width: 100%; /* Ensure heading takes up full width of the section */
+}
+
+.section-content {
+    display: none; /* Hide by default */
+    padding: 20px;
+    width: 100%; /* Ensure content takes up full width of the section */
+}
+
+.section-content.show {
+    display: flex; /* Show using flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+    width: 100%;
+}
+
+.card {
+    width: 90%;
+    background-color: var(--card-background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid var(--divider-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.word {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    text-align: center
+}
+
+.kanji {
+    font-size: 3em;
+    font-family: 'Sawarabi Gothic', serif;
+    color: var(--text-color);
+}
+
+.furigana {
+    font-size: 1.5em;
+    font-weight: normal;
+    font-family: 'Sawarabi Gothic', serif;
+    color: var(--text-color);
+}
+
+.english {
+    font-size: 1em;
+    margin-top: 10px; /* Space between Kanji/Furigana and English */
+    font-family: 'Sawarabi Gothic', serif;
+    color: var(--text-color);
+}
+
+.details {
+    padding: 20px;
+    background-color: var(--card-background-color);
+    text-align: left;
+}
+
+.sentence {
+    font-size: 1.2em;
+    line-height: 1.0;
+    margin-bottom: 5px; /* Small margin between sentence and translation */
+    font-family: 'Sawarabi Gothic', serif;
+    color: var(--text-color);
+}
+
+.sentencetranslation {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Space after translation */
+    font-family: 'Sawarabi Gothic', serif;
+    color: var(--text-color);
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--divider-color); /* Light grey line */
+    margin: 10px 0; /* Space above and below the rule */
+}
+
+.moresentences {
+    font-size: 1.2em;
+    line-height: 2;
+    margin-bottom: 20px; /* Space after more sentences */
+    font-family: 'Sawarabi Gothic', serif;
+    color: var(--text-color);
+}
+
+.moreinfo {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 0; /* No additional space needed after the last element */
+    font-family: 'Sawarabi Gothic', serif;
+    color: var(--text-color);
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    --background-color: #333;
+    --card-background-color: #444;
+    --text-color: #fff;
+    --divider-color: #555;
+    --button-background-color: #444;
+    --button-text-color: #fff;
+    --button-hover-background-color: #555;
+    --button-hover-text-color: #fff;
+}
+
+.dark-mode body {
+    background-color: var(--background-color);
+}
+
+.dark-mode .card {
+    background-color: var(--card-background-color);
+    border: 1px solid var(--divider-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.dark-mode .word {
+    background-color: #555;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.dark-mode .kanji, .dark-mode .furigana, .dark-mode .english {
+    color: var(--text-color);
+}
+
+.dark-mode .details {
+    background-color: var(--card-background-color);
+}
+
+.dark-mode .sentence, .dark-mode .sentencetranslation, .dark-mode .moresentences, .dark-mode .moreinfo {
+    color: var(--text-color);
+}
+
+.dark-mode .section-divider {
+    border-top: 1px solid var(--divider-color);
+}
+
+button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+button:hover {
+    background-color: var(--button-hover-background-color);
+    color: var(--button-hover-text-color);
+}
+
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic:wght@400;700&display=swap');
